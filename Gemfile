@@ -1,7 +1,6 @@
-# frozen_string_literal: true
-
 source 'https://rubygems.org'
 
+gem 'erb', '~> 4.0'
 gem 'thor', '~> 1.2'
 
-gem 'erb', '~> 4.0'
+gem 'rubocop', require: false
