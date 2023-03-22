@@ -1,0 +1,17 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    cgi (0.3.6)
+    erb (4.0.2)
+      cgi (>= 0.3.3)
+    thor (1.2.1)
+
+PLATFORMS
+  x86_64-darwin-20
+
+DEPENDENCIES
+  erb (~> 4.0)
+  thor (~> 1.2)
+
+BUNDLED WITH
+   2.4.8
