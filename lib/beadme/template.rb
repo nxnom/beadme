@@ -30,7 +30,7 @@ module Beadme
       @template = template
       @questions = questions
       @dir = dir
-      @dir = Dir.pwd if dir == 'Current directory'
+      @save_path = File.join(dir, 'README.md')
     end
 
     # Create the README.md file
@@ -63,12 +63,10 @@ module Beadme
     end
 
     def check_file
-      @save_path = File.join(dir, 'README.md')
       return unless File.exist?(save_path)
 
       say 'README.md already exists in this directory'
-      overwrite = yes?('Do you want to overwrite it? (y/N)', :red)
-      exit unless overwrite
+      exit(1) unless yes?('Do you want to overwrite it? (y/N)', :red)
     end
 
     def ask_questions
