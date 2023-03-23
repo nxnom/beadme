@@ -1,0 +1,174 @@
+<a name="readme-top"></a>
+
+<div align="center">
+<h3><b><%= data[:name] %></b></h3>
+</div>
+
+# 📗 Table of Contents
+
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
+- [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [Run tests](#run-tests)
+  - [Deployment](#triangular_flag_on_post-deployment)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [❓ FAQ (OPTIONAL)](#faq)
+- [📝 License](#license)
+
+# 📖 <%= data[:name] %> <a name="about-project"></a>
+
+<%= data[:description] %>
+
+## 🛠 Built With <a name="built-with"></a>
+
+### Tech Stack <a name="tech-stack"></a>
+
+<% stacks = data.select { |k| k.to_s.include?('stack') } %>
+<% stacks.each do |key, value| %>
+<% if value.length > 0 %>
+<details>
+<summary><%= key.to_s.split('_').first.capitalize %></summary>
+<ul><% value.each do |tech| %><li><%= tech %></li><% end %></ul>
+</details>
+<% end %>
+<% end %>
+
+### Key Features <a name="key-features"></a>
+
+<% if data[:key_features].length == 0 %>
+- **No key features**
+<% elsif data[:key_features].length > 0 %>
+<% data[:key_features].each do |feature| %>
+- **<%= feature %>**
+<% end %>
+<% end %>
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+<% if data[:live_demo_link].empty? %>
+- **Live demo not available at this time**
+<% else %>
+- **[Live Demo](<%= data[:live_demo_link] %>)**
+<% end %>
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+## 💻 Getting Started <a name="getting-started"></a>
+
+To get a local copy up and running, follow these steps.
+
+### Prerequisites
+
+In order to run this project you need: <%= data[:requirements] %>
+
+<% if !data[:setup_instructions].empty? %>
+### Setup
+<%= data[:setup_instructions] %>
+<% end %>
+
+<% if !data[:install_command].empty? %>
+### Install
+
+Install this project with:
+```sh
+<%= data[:install_command] %>
+```
+<% end %>
+
+
+<% if !data[:run_command].empty? %>
+### Usage
+
+To run the project, execute the following command:
+```sh
+<%= data[:run_command] %>
+```
+<% end %>
+
+
+<% if !data[:test_command].empty? %>
+### Run tests
+
+To run tests, run the following command:
+```sh
+<%= data[:test_command] %>
+```
+<% end %>
+
+<% if !data[:deployment_instructions].empty? %>
+### Deployment
+
+<%= data[:deployment_instructions] %>
+<% end %>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 👥 Authors <a name="authors"></a>
+
+👤 **{{author_name}}**
+
+{{author_social_links}}
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🔭 Future Features <a name="future-features"></a>
+
+<% if data[:future_features].length == 0 %>
+- More features coming soon!
+<% elsif data[:future_features].length > 0 %>
+<% data[:future_features].each do |feature| %>
+- [ ] **<%= feature %>**
+<% end %>
+<% end %>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## ⭐️ Show your support <a name="support"></a>
+
+If you like this project or find it useful, please consider giving it a ⭐️. Thanks!
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+<%= data[:acknowledgements] %>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<% if !data[:faq].empty? %>
+## ❓ FAQ <a name="faq"></a>
+<%= data[:faq] %>
+<% end %>
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 📝 License <a name="license"></a>
+
+This project is [<%= data[:license] %>](./LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
