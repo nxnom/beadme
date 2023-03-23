@@ -1,0 +1,39 @@
+name: "What is your project name?"
+description: "What is your project description?"
+client_stack: |
+  What are the technologies used in your project for the client?
+     e.g. React, Redux, Vue (separate with commas)
+server_stack: |
+  What are the technologies used in your project for the server?
+     e.g. Node, Express, Ruby on Rails (separate with commas)
+database_stack: |
+  What are the technologies used in your project for the database?
+     e.g. PostgreSQL, MongoDB, MySQL (separate with commas)
+key_features: |
+  Describe key features of the application.
+     e.g. Realtime updates, Live Chat, etc. (separate with commas)
+live_demo_link: "What is the link to the live demo?"
+requirements: |
+  What are the requirements to run the project?
+     e.g. Node, Ruby, etc. (separate with commas)
+setup_instructions: |
+  How do you set up the project?
+     e.g. Clone the repo, install dependencies, etc.
+install_command: |
+  What is the command to install the project?
+     e.g. npm install, bundle install, etc.
+run_command: |
+  What is the command to run the project?
+     e.g. npm start, bundle exec rails s, etc.
+test_command: |
+  What is the command to test the project?
+     e.g. npm test, bundle exec rspec, etc.
+deployment_instructions: |
+  How do you deploy this project?
+     e.g. Run the build script, etc.
+future_features: |
+  Describe features you will add to the project in the future.
+     e.g. Payment gateway, etc. (separate with commas)
+acknowledgements: "Who helped you build this project? (Acknowledgements)"
+faq: "What are the frequently asked questions about this project?"
+license: "What is the license for this project?"

@@ -1,0 +1,9 @@
+welcome: | 
+  Welcome to the README builder!
+  Please answer the following questions to generate your README file.
+  You can use Markdown formatting in your answers.
+
+  Use -h or --help to see the available options.
+  _______________________________________________________
+
+about: beadme - A CLI tool to create a README.md for your project
