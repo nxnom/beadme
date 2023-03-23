@@ -26,11 +26,11 @@ module Beadme
   end
 
   class Configuration
-    def template
+    def default_template
       File.read(Defaults::TEMPLATE_FILE)
     end
 
-    def questions
+    def default_questions
       Utils.load_yaml(Defaults::QUESTIONS_FILE)
     end
 

@@ -1,16 +1,14 @@
-require 'thor'
 require 'erb'
+require 'thor/shell'
 
 class ::String
   def to_list
-    split(',')
-      .map(&:strip)
-      .reject(&:empty?)
-      .map(&:capitalize)
+    split(',').map(&:strip).reject(&:empty?).map(&:capitalize)
   end
 end
 
 module Beadme
+  # This class is responsible for generating the README.md file
   class Template
     include Thor::Shell
 
@@ -25,8 +23,8 @@ module Beadme
     end
 
     def initialize(
-      template: Beadme.configuration.template,
-      questions: Beadme.configuration.questions,
+      template: Beadme.configuration.default_template,
+      questions: Beadme.configuration.default_questions,
       dir: Dir.pwd
     )
       @template = template
@@ -35,27 +33,33 @@ module Beadme
       @dir = Dir.pwd if dir == 'Current directory'
     end
 
+    # Create the README.md file
     def create
       check_dir
       check_file
 
       erb = ERB.new(template)
 
+      # ERB template will use this variable to populate the content
       data = ask_questions
       File.write(save_path, erb.result(binding))
+
       print 'Successfully generate Readme.md in '
       say save_path, :green
     rescue ArgumentError => e
       say e.message
+      exit 1
+    rescue StandardError => e
+      say "An error occurred while generating the README.md \n file: #{e.message}"
       exit 1
     end
 
     private
 
     def check_dir
-      File.exist?(dir) or raise ArgumentError, "\"#{dir}\" does not exist"
-      File.directory?(dir) or raise ArgumentError, "\"#{dir}\" is not a directory"
-      File.writable?(dir) or raise ArgumentError, "\"#{dir}\" is not writable"
+      raise ArgumentError, "#{dir} does not exist" unless File.exist?(dir)
+      raise ArgumentError, "#{dir} is not a directory" unless File.directory?(dir)
+      raise ArgumentError, "#{dir} is not writable" unless File.writable?(dir)
     end
 
     def check_file
@@ -63,7 +67,8 @@ module Beadme
       return unless File.exist?(save_path)
 
       say 'README.md already exists in this directory'
-      yes? 'Do you want to overwrite it? (y/N)', :red or exit
+      overwrite = yes?('Do you want to overwrite it? (y/N)', :red)
+      exit unless overwrite
     end
 
     def ask_questions
@@ -78,6 +83,4 @@ module Beadme
       data
     end
   end
-
-  class TemplateError < StandardError; end
 end

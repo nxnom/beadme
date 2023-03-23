@@ -7,13 +7,14 @@ module Beadme
   class Runner < Thor
     class_option :output, aliases: '-o', type: :string, default: 'Current directory', desc: 'Output directory'
 
-    desc 'create', 'Create a new beadme project', hide: true
+    desc 'create', 'Create a new Readme file', hide: true
     def create
       say "#{Beadme.configuration.messages[:welcome]}\n"
 
       Template.new(
-        template: Beadme.configuration.template,
-        questions: Beadme.configuration.questions,
+        # update this line to use the new configuration
+        # template: custom_template,
+        # questions: custom_questions,
         dir: options[:output]
       ).create
     end
