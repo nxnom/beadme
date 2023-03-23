@@ -37,3 +37,7 @@ future_features: |
 acknowledgements: "Who helped you build this project? (Acknowledgements)"
 faq: "What are the frequently asked questions about this project?"
 license: "What is the license for this project?"
+author_name: "What is your name?"
+author_github: "What is your GitHub username?"
+author_twitter: "What is your Twitter username?"
+author_linkedin: "What is your LinkedIn username?"

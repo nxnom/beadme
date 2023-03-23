@@ -121,9 +121,11 @@ To run tests, run the following command:
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **{{author_name}}**
+**<%= data[:author_name] %>**
 
-{{author_social_links}}
+<% if !data[:author_github].empty? %> - Github: [@<%= data[:author_github] %>](https://github.com/<%= data[:author_github] %>) <% end %>
+<% if !data[:author_twitter].empty? %> - Twitter: [@<%= data[:author_twitter] %>](https://twitter.com/<%= data[:author_twitter] %>) <% end %>
+<% if !data[:author_linkedin].empty? %> - LinkedIn: [LinkedIn](https://linkedin.com/in/<%= data[:author_linkedin] %>) <% end %>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
