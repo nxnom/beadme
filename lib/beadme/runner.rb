@@ -1,59 +1,21 @@
 require 'thor'
-require 'erb'
 
+require_relative './template'
 require_relative '../beadme'
-
-class ::String
-  def to_list
-    split(',')
-      .map(&:strip)
-      .reject(&:empty?)
-      .map(&:capitalize)
-  end
-end
 
 module Beadme
   class Runner < Thor
     class_option :output, aliases: '-o', type: :string, default: 'Current directory', desc: 'Output directory'
 
-    no_commands do
-      def ask(question, color = nil)
-        say question, color
-        print '> '
-        super ''
-      ensure
-        say ''
-      end
-    end
-
     desc 'create', 'Create a new beadme project', hide: true
     def create
       say "#{Beadme.configuration.messages[:welcome]}\n"
-      save_dir = options[:output]
-      save_dir = Dir.pwd if options[:output] == 'Current directory'
-      path = File.join(save_dir, 'README.md')
 
-      template = ERB.new(Beadme.configuration.template)
-
-      data = {}
-      questions = Beadme.configuration.questions
-      questions.each_with_index do |value, i|
-        key, question = value
-        answer = ask "#{i + 1}. #{question}", :blue
-        answer = answer.to_list if key.to_s.include?('stack') or key.to_s.include?('features')
-
-        data[key] = answer
-      end
-
-      if File.exist?(path)
-        say 'README.md already exists in this directory', :red
-        yes? 'Do you want to overwrite it? (y/N)', :red or exit
-      end
-
-      File.write(path, template.result(binding))
-
-      print 'Successfully generate Readme.md in '
-      say path, :green
+      Template.new(
+        template: Beadme.configuration.template,
+        questions: Beadme.configuration.questions,
+        dir: options[:output]
+      ).create
     end
 
     default_task :create
