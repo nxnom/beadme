@@ -7,7 +7,7 @@ Don't take is seriously, I just wanted to try out some Ruby stuff.
 
 ## Installation
 ```sh
-  gem install beadme`
+  gem install beadme
 ```
 
 ## Install from source code 
