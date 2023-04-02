@@ -1,2 +1,4 @@
 README.md
 /*.gem
+.DS_Store
+/sorbet
