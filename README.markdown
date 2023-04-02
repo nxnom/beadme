@@ -1,12 +1,16 @@
-[![Ruby Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop/rubocop)
+[![Gem Version](https://badge.fury.io/rb/beadme.svg)](https://badge.fury.io/rb/beadme) [![Ruby Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop/rubocop)
 
 # Beadme - Build Readme 😂 
 
 This is a simple CLI tool to create a README.md for your project.
 Don't take is seriously, I just wanted to try out some Ruby stuff.
 
-
 ## Installation
+```sh
+  gem install beadme`
+```
+
+## Install from source code 
 
 Install via Bundler:
 
