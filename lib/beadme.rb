@@ -51,5 +51,5 @@ module Beadme
     end
   end
 
-  VERSION = File.read(Utils.get_path('beadme.gemspec')).match(/s.version = '(.*)'/)[1]
+  VERSION = File.read(Utils.get_path('VERSION')).strip
 end

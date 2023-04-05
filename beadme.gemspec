@@ -1,6 +1,8 @@
+version = File.read(File.expand_path('../VERSION', __FILE__)).strip
+
 Gem::Specification.new do |s|
   s.name = 'beadme'
-  s.version = '0.1.0'
+  s.version = version
   s.summary = 'README.md generator'
   s.description = 'README generator for projects'
   s.authors = ['Wai Yan Phyo']
@@ -11,7 +13,8 @@ Gem::Specification.new do |s|
     'config/*',
     'templates/*',
     'README.markdown',
-    'LICENSE'
+    'LICENSE',
+    'VERSION'
   ]
   s.bindir = 'bin'
   s.executables = ['beadme']
@@ -23,4 +26,6 @@ Gem::Specification.new do |s|
     'source_code_uri' => 'https://github.com/oyhpnayiaw/beadme',
     'rubygems_mfa_required' => 'true'
   }
+
+  s.add_runtime_dependency 'thor', '~> 1.2'
 end
