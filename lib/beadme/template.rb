@@ -19,7 +19,7 @@ module Beadme
       print '> '
       super ''
     ensure
-      puts ''
+      print "\e[2J\e[f"
     end
 
     def initialize(
