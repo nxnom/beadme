@@ -1,9 +1,5 @@
 require 'thor'
 
-require_relative 'template'
-require_relative 'version'
-require_relative '../beadme'
-
 module Beadme
   class Runner < Thor
     class_option :output, aliases: '-o', type: :string, desc: 'Output directory (default: current directory)'

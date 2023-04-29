@@ -1,5 +1,9 @@
 require 'yaml'
 
+require_relative 'beadme/version'
+require_relative 'beadme/runner'
+require_relative 'beadme/template'
+
 module Beadme
   module Utils
     # Find a file or directory in the project

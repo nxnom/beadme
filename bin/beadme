@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/beadme/runner'
+require_relative '../lib/beadme'
 
 Beadme::Runner.start(ARGV)
