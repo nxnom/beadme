@@ -1,8 +1,8 @@
-version = File.read(File.expand_path('../VERSION', __FILE__)).strip
+require_relative 'lib/beadme/version'
 
 Gem::Specification.new do |s|
   s.name = 'beadme'
-  s.version = version
+  s.version = Beadme::VERSION
   s.summary = 'README.md generator'
   s.description = 'README generator for projects'
   s.authors = ['Wai Yan Phyo']
@@ -13,8 +13,7 @@ Gem::Specification.new do |s|
     'config/*',
     'templates/*',
     'README.markdown',
-    'LICENSE',
-    'VERSION'
+    'LICENSE'
   ]
   s.bindir = 'bin'
   s.executables = ['beadme']

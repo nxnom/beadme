@@ -50,6 +50,4 @@ module Beadme
       yield(configuration)
     end
   end
-
-  VERSION = File.read(Utils.get_path('VERSION')).strip
 end

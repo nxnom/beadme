@@ -1,6 +1,7 @@
 require 'thor'
 
-require_relative './template'
+require_relative 'template'
+require_relative 'version'
 require_relative '../beadme'
 
 module Beadme
