@@ -1,4 +1,5 @@
+.DS_Store
 README.md
 /*.gem
-.DS_Store
 /sorbet
+/Gemfile.lock
